@@ -1,0 +1,38 @@
+html, body { margin:0; padding:0; width:100%; height:100%; background:#0a0a1f; overflow:hidden; font-family:Arial,sans-serif; }
+svg.logo { position:absolute; top:50%; left:50%; width:100%; height:100%; transform:translate(-50%,-50%); z-index:0; filter: drop-shadow(0 0 20px #1f8fff) drop-shadow(0 0 15px #6a5acd);}
+.top-group{transform:translateY(-150%); animation:moveDown 2s ease-out forwards;}
+.bottom-group{transform:translateY(150%); animation:moveUp 2s ease-out forwards;}
+@keyframes moveDown{to{transform:translateY(0);}}
+@keyframes moveUp{to{transform:translateY(0);}}
+h1{position:absolute; top:10%; left:50%; transform:translate(-50%,-50%); font-size:20vw; text-align:center; z-index:5; font-weight:bold; text-transform:uppercase; white-space:nowrap;}
+h1 span{ text-shadow:0 0 5px #00ff00,0 0 10px #00ff00,0 0 20px #00ff00; transition: all 0.5s ease;}
+.subtitle-container{position:absolute; top:26%; left:50%; transform:translateX(-50%); display:flex; gap:0.1vw; white-space:nowrap; font-size:6vw; z-index:8;}
+.subtitle-word{opacity:0; display:inline-block;}
+@keyframes slideIn{from{opacity:0; transform:translateX(100px);} to{opacity:1; transform:translateX(0);}}
+@keyframes slideOut{from{opacity:1; transform:translateX(0);} to{opacity:0; transform:translateX(100px);}}
+.menu-buttons{position:absolute; top:10px; right:10px; display:flex; gap:5px; z-index:10;}
+.menu-btn{background: rgba(0,240,255,0.3); color:#fff; border:1px solid rgba(0,240,255,0.5); font-size:10px; font-weight:bold; padding:2px 10px; border-radius:2px; cursor:pointer; box-shadow:0 0 15px rgba(0,240,255,0.5); transform:skewX(-20deg); text-align:center; transition:all 0.3s ease;}
+.menu-btn span{display:inline-block; transform:skewX(20deg);}
+.menu-btn:hover{background: rgba(0,240,255,0.1); box-shadow:0 0 25px #00f0ff, inset 0 0 12px #00f0ff33;}
+.menu-btn:active{transform: skewX(-20deg) scale(0.95);}
+.menu-btn.active{background: rgba(0,240,255,0.5); border:1px solid rgba(0,240,255,0.8); box-shadow:0 0 25px #00f0ff, inset 0 0 15px #00f0ff33;}
+.footer{position:absolute; bottom:10px; width:100%; text-align:center; font-size:14px; color:#fff; z-index:10;}
+.social-icons{margin-bottom:5px;}
+.social-icons a{margin:0 6px; color:#fff; text-decoration:none; font-size:18px;}
+.social-icons a:hover{color:#00f0ff;}
+
+/* Containers */
+#emailContainer, #timerContainer { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; flex-direction:column; align-items:center; z-index:20; }
+#timerContainer { display:none; }
+#emailContainer input, #captchaPopup input { padding:10px; font-size:16px; margin:10px 0; border-radius:5px; border:none; }
+button#emailSubmit { padding:10px 20px; font-size:16px; cursor:pointer; }
+button.claim-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); padding:15px 30px; font-size:18px; background:#00ff99; color:#000; border:none; border-radius:10px; cursor:pointer; z-index:25; display:none; }
+button.claim-btn:disabled{background:#555; cursor:not-allowed;}
+
+/* Captcha popup */
+#captchaPopup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); color:#fff; justify-content:center; align-items:center; flex-direction:column; z-index:50; }
+#captchaPopup input { margin:10px 0; }
+#captchaPopup button { padding:10px 20px; font-size:16px; cursor:pointer; }
+
+/* Success message */
+#message { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:24px; font-weight:bold; color:#0f0; text-align:center; z-index:30; }
